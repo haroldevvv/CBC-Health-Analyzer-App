@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Features</title>
+    <style>
+        /* General Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Roboto', Arial, sans-serif;
+            background-color: whitesmoke; 
+            color: #333; 
+            line-height: 1.6;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh; 
+        }
+
+        header {
+            background-color: #2a9d8f; 
+            color: white;
+            padding: 1.5rem 2rem;
+            text-align: center;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        header h1 {
+            font-size: 2.5rem;
+            font-weight: bold;
+            margin-bottom: 1rem;
+        }
+
+        nav {
+            margin-top: 0.5rem;
+        }
+
+        nav a {
+            color: #fff;
+            text-decoration: none;
+            margin: 0 1.5rem;
+            font-size: 1.2rem;
+            font-weight: bold;
+        }
+
+        nav a:hover {
+            color: #e76f51;
+        }
+
+        main {
+            flex-grow: 1;
+            padding: 2rem;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: flex-start;
+            height: 100%;
+            margin-bottom: 0; 
+        }
+
+        h2 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            color: #264653; 
+            text-align: center;
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr); 
+            gap: 1rem;
+            max-width: 100%; 
+            width: 100%;
+            padding: 1rem;
+            margin-top: 1rem;
+        }
+
+        .feature-item {
+            background-color: #FFFFFF; 
+            padding: 1.5rem;
+            border-radius: 8px;
+            text-align: center;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            border: 1px solid #264653; 
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            height: 100%;
+            min-height: 250px;
+            transition: transform 0.3s ease-in-out;
+            flex-grow: 1;
+        }
+
+        .feature-item h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            color: #FF6F61; 
+        }
+
+        .feature-item p {
+            font-size: 1rem;
+            color: #333; 
+            line-height: 1.5;
+            margin-bottom: 1rem;
+            flex-grow: 1;
+        }
+
+        footer {
+            background-color: #2a9d8f; 
+            color: white;
+            padding: 1rem;
+            text-align: center;
+            border-top: 1px solid #ddd;
+            width: 100%;
+        }
+
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Features</h1>
+        <nav>
+            <a href="/dashboard">Back to Dashboard</a>
+            <a href="/about">About</a>
+            <a href="/logout">Logout</a>
+        </nav>
+    </header>
+
+    <main>
+        <h2>Why Choose Us?</h2>
+        <div class="features-grid">
+            <div class="feature-item">
+                <h3>Accurate Insights</h3>
+                <p>Utilizing cutting-edge Artificial Neural Networks (ANN), our platform ensures precise interpretation of your Complete Blood Count (CBC) data.</p>
+            </div>
+            <div class="feature-item">
+                <h3>Instant Feedback</h3>
+                <p>Get immediate, actionable results that empower you to make quick, informed health decisions without delay.</p>
+            </div>
+            <div class="feature-item">
+                <h3>Uncompromised Privacy</h3>
+                <p>Your CBC data is protected by top-tier security measures, ensuring complete confidentiality and compliance with privacy standards.</p>
+            </div>
+            <div class="feature-item">
+                <h3>Proactive Health Monitoring</h3>
+                <p>With advanced predictive algorithms, our platform identifies potential health risks early, supporting a proactive approach to your well-being.</p>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 H&R CBC Health Analyzer. All rights reserved.</p>
+    </footer>
+</body>
+</html>

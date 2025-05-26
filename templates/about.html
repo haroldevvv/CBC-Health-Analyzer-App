@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Help/FAQ</title>
+    <style>
+        /* General Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Roboto', Arial, sans-serif;
+            background-color: whitesmoke; 
+            color: #333;
+            line-height: 1.6;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        header {
+            background-color: #2a9d8f; 
+            color: white;
+            padding: 1rem 2rem;
+            text-align: center;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        header h1 {
+            font-size: 2.5rem;
+            font-weight: bold;
+            margin-bottom: 1rem;
+        }
+
+        nav {
+            margin-top: 0.5rem;
+        }
+
+        nav a {
+            color: #fff;
+            text-decoration: none;
+            margin: 0 1.5rem;
+            font-size: 1.2rem;
+            font-weight: bold;
+        }
+
+        nav a:hover {
+            color: #e76f51;
+        }
+
+        main {
+            padding: 1rem;
+            flex-grow: 1; 
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between; 
+            max-height: calc(100vh - 150px); 
+            overflow-y: auto; 
+        }
+
+        h2 {
+            text-align: center;
+            font-size: 2rem;
+            margin-bottom: 1rem;
+            color: #264653; 
+        }
+
+        .faq-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin: 0 auto;
+            max-width: 1200px;
+            padding: 1rem;
+        }
+
+        .faq-item {
+            background-color: #FFFFFF; 
+            padding: 1.5rem;
+            border-radius: 8px;
+            text-align: center;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            border: 1px solid #264653; 
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start; 
+            height: 100%;
+            min-height: 250px;
+            transition: transform 0.3s ease-in-out;
+            flex-grow: 1;
+        }
+
+        .faq-item h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            color: #FF6F61; 
+        }
+
+        .faq-item p {
+            font-size: 1rem;
+            color: #333; 
+            line-height: 1.5;
+            margin-bottom: 1rem;
+        }
+
+        footer {
+            background-color: #2a9d8f; 
+            color: white;
+            text-align: center;
+            padding: 1rem 0;
+        }
+
+        footer p {
+            font-size: 0.9rem;
+        }
+
+        .need-help-button {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background-color: #e63946; 
+            color: white;
+            padding: 12px 24px;
+            font-size: 1.1rem;
+            font-weight: bold;
+            border: none;
+            border-radius: 25px;
+            cursor: pointer;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            transition: background-color 0.3s, transform 0.3s;
+        }
+
+        .need-help-button:hover {
+            background-color: #FF6F61; 
+            transform: translateY(-3px);
+        }
+
+        .contact-details {
+            display: none; 
+            margin-top: 2rem;
+            padding: 2rem;
+            border-radius: 10px;
+            background-color: #FFFFFF; 
+            color: #3d5a80;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            text-align: center;
+        }
+
+        .contact-details h3 {
+            color: #264653; 
+            margin-bottom: 1rem;
+        }
+
+        .contact-details p {
+            margin-bottom: 1rem;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Help/FAQ</h1>
+        <nav>
+            <a href="/dashboard">Back to Dashboard</a>
+            <a href="/features">Features</a>
+            <a href="/logout">Logout</a>
+        </nav>
+    </header>
+
+    <main>
+        <h2>Frequently Asked Questions</h2>
+        <div class="faq-container">
+            <div class="faq-item">
+                <h3 class="faq-question">What is CBC Health Analyzer?</h3>
+                <p>
+                    CBC Health Analyzer is a web-based platform designed to help individuals interpret their Complete Blood Count (CBC) results. 
+                    By combining technology and medical knowledge, it empowers users with detailed insights into their health conditions.
+                </p>
+            </div>
+            <div class="faq-item">
+                <h3 class="faq-question">How Does It Work?</h3>
+                <p>
+                    The predictions generated by our system utilize advanced Artificial Neural Networks (ANN) technology. 
+                    These models are trained on extensive medical datasets to ensure high levels of accuracy and reliability.
+                </p>
+                <p>
+                    However, the results are not a substitute for professional medical advice. Always consult with a healthcare provider to interpret results 
+                    and make informed decisions regarding your health.
+                </p>
+            </div>
+            <div class="faq-item">
+                <h3 class="faq-question">Why Was It Created?</h3>
+                <p>
+                    This platform was created to simplify the interpretation of CBC results. We understand that medical data can often feel overwhelming, 
+                    and our goal is to provide a user-friendly tool that bridges the gap between raw medical information and actionable health insights.
+                </p>
+            </div>
+        </div>
+
+        <!-- Contact Details Section -->
+        <div class="contact-details" id="contact-details">
+            <h3>Contact Us</h3>
+            <p>Email: support@cbc-analyzer.com</p>
+            <p>Phone: +1-800-123-4567</p>
+            <p>Available: Monday - Friday, 9:00 AM - 5:00 PM (PST)</p>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Your Company. All rights reserved.</p>
+    </footer>
+
+    <!-- "Need Help?" Button -->
+    <button class="need-help-button" onclick="toggleContactDetails()">Need Help?</button>
+
+    <script>
+        // Toggle Contact Details Visibility
+        function toggleContactDetails() {
+            const contactDetails = document.getElementById('contact-details');
+            contactDetails.style.display = contactDetails.style.display === 'block' ? 'none' : 'block';
+        }
+
+        // Toggle FAQ Detail Visibility
+        document.querySelectorAll('.faq-item').forEach(item => {
+            item.addEventListener('click', () => {
+                const detail = item.querySelector('p');
+                detail.style.display = detail.style.display === 'block' ? 'none' : 'block';
+            });
+        });
+    </script>
+</body>
+</html>

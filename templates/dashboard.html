@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+    <link rel="stylesheet" href="/static/styles.css">
+</head>
+<body>
+    <header>
+        <div class="logo">CBC Health Analyzer</div>
+        <h3>Philippine Standard Time: <span id="real-time-date"></span></h3>
+        <nav>
+            <ul>
+                <li><a href="/features">Features</a></li>
+                <li><a href="/about">About</a></li>
+                <li><a href="/logout">Logout</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="hero">
+        <h1 class="hero-title">Welcome, {{ user_first_name }}!</h1>
+        <p class="hero-subtitle">Your health at your fingertips.</p>
+        <div class="cta-button-container">
+            <a href="/cbc_analysis" class="cta-button">Previous CBC Analysis</a>
+            <a href="/health_tips" class="cta-button">Health Tips Based on Past Results</a>
+            <a href="/new_cbc_analysis" class="cta-button">New CBC Analysis</a>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 H&R CBC Health Analyzer. All rights reserved.</p>
+    </footer>
+
+    <script>
+        function updateDateTime() {
+            const now = new Date();
+            document.getElementById('real-time-date').textContent = now.toLocaleString();
+        }
+        setInterval(updateDateTime, 1000); // Update every second
+    </script>
+    
+</body>
+</html>

@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Health Tips</title>
+    <link rel="stylesheet" href="/static/styles.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 30px;
+            background-color: #4c4a74;
+            border-bottom: 1px solid #ddd;
+        }
+        h1 {
+            margin: 0;
+            font-size: 24px;
+        }
+        .nav-links {
+            display: flex;
+            gap: 15px;
+        }
+        .nav-links a {
+            text-decoration: none;
+            color: #007bff;
+            font-size: 16px;
+        }
+        .nav-links a:hover {
+            text-decoration: underline;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px auto;
+            font-size: 16px;
+        }
+        table th, table td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+        }
+        table th {
+            background-color: #5d34ae;
+            color: white;
+        }
+
+        /* Status Color Styles */
+        .status-low {
+            color: red;
+            font-weight: bold;
+        }
+        .status-normal {
+            color: green;
+            font-weight: bold;
+        }
+        .status-high {
+            color: red;
+            font-weight: bold;
+        }
+
+        /* Styling for the Health Tips section */
+        main h2 {
+            font-size: 22px;
+            color: #5d34ae; /* Matches the table header color for consistency */
+            margin-top: 30px;
+            text-align: center;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        ul {
+            list-style-type: none; /* Removes default bullet points */
+            padding: 0;
+            margin: 20px auto;
+            max-width: 800px;
+        }
+
+        ul li {
+            background-color: #f9f9f9; /* Light background for contrast */
+            margin: 10px 0;
+            padding: 15px;
+            border: 1px solid #ddd;
+            border-left: 5px solid #5d34ae; /* Accent line for visual distinction */
+            font-size: 16px;
+            color: #333;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+
+        ul li:hover {
+            transform: translateX(10px); /* Slight movement on hover */
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15); /* Stronger shadow on hover */
+            background-color: #eef2ff; /* Subtle background highlight on hover */
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Health Tips Based on Your Results</h1>
+        <div class="nav-links">
+            <a href="/dashboard">Dashboard</a>
+            <a href="/logout">Logout</a>
+        </div>
+    </header>
+    <main>
+        <h2>Your CBC Results</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>Parameter</th>
+                    <th>Value</th>
+                    <th>Status</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for param, value in cbc_results.items() %}
+                <tr>
+                    <td>{{ param.upper() }}</td>
+                    <td>{{ value }}</td>
+                    <td>
+                        {% set status = cbc_analysis[param] %}
+                        {% if status == 'LOW' %}
+                            <span class="status-low">{{ status }}</span>
+                        {% elif status == 'NORMAL' %}
+                            <span class="status-normal">{{ status }}</span>
+                        {% elif status == 'HIGH' %}
+                            <span class="status-high">{{ status }}</span>
+                        {% else %}
+                            {{ status }}
+                        {% endif %}
+                    </td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+        <h2>Health Tips</h2>
+        <ul>
+            {% for tip in health_tips %}
+            <li>{{ tip }}</li>
+            {% endfor %}
+        </ul>
+    </main>
+</body>
+</html>

@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Previous CBC Analysis</title>
+    <link rel="stylesheet" href="/static/styles.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            background-color: #0092d1;
+            padding: 10px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 2px solid #ddd;
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 1.5rem;
+        }
+
+        .nav-links a {
+            margin-left: 20px;
+            text-decoration: none;
+            color: #000000;
+            font-weight: bold;
+        }
+
+        .nav-links a:hover {
+            color: #007BFF;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+        }
+
+        table thead {
+            background-color: #007BFF;
+            color: white;
+        }
+
+        table th, table td {
+            text-align: left;
+            padding: 10px;
+            border: 1px solid #ddd;
+        }
+
+        th {
+            text-transform: capitalize;
+            font-size: 0.9rem;
+        }
+
+        td {
+            font-size: 0.85rem;
+            white-space: nowrap;
+        }
+
+        body {
+            max-width: 1200px;
+            margin: auto;
+            padding: 20px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Previous CBC Analysis</h1>
+        <div class="nav-links">
+            <a href="/dashboard">Dashboard</a>
+            <a href="/logout">Logout</a>
+        </div>
+    </header>
+    <table>
+        <thead>
+            <tr>
+                <th>Hb</th>
+                <th>RBC</th>
+                <th>Hct</th>
+                <th>MCV</th>
+                <th>MCH</th>
+                <th>MCHC</th>
+                <th>WBC</th>
+                <th>Neutrophils</th>
+                <th>Lymphocytes</th>
+                <th>Platelet</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for result in results %}
+            <tr>
+                <td>{{ result['hb'] }}</td>
+                <td>{{ result['rbc'] }}</td>
+                <td>{{ result['hct_pcv'] }}</td>
+                <td>{{ result['mcv'] }}</td>
+                <td>{{ result['mch'] }}</td>
+                <td>{{ result['mchc'] }}</td>
+                <td>{{ result['wbc'] }}</td>
+                <td>{{ result['neutrophils'] }}</td>
+                <td>{{ result['lymphocytes'] }}</td>
+                <td>{{ result['platelet'] }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</body>
+</html>
