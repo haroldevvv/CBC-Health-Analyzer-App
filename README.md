@@ -2,16 +2,16 @@
 The CBC Health Analyzer App is a web-based application designed to analyze Complete Blood Count (CBC) data. 
 
 ## Features 
-### CBC Data Analysis: Upload and analyze CBC data from CSV files.
-### Interactive Visualizations: Generate charts and graphs to visualize blood count metrics.
-### User-Friendly Interface: Navigate through an intuitive web interface built with HTML and CSS.
-### Data Storage: Store and retrieve analysis results using a SQLite database.
+CBC Data Analysis: Upload and analyze CBC data from CSV files.
+Interactive Visualizations: Generate charts and graphs to visualize blood count metrics.
+User-Friendly Interface: Navigate through an intuitive web interface built with HTML and CSS.
+Data Storage: Store and retrieve analysis results using a SQLite database.
 
 ## Technologies Used
-### Backend: Python (Flask)
-### Frontend: HTML, CSS
-### Database: SQLite
-### Data Handling: CSV files
+Backend: Python (Flask)
+Frontend: HTML, CSS
+Database: SQLite
+Data Handling: CSV files
 
 ## Installation
 ### 1. Clone the repository: 
