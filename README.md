@@ -27,7 +27,15 @@ Data Handling: CSV files
 Open your web browser and navigate to ```http://127.0.0.1:5000/```.
 
 ## Project Structure
-<pre><code>```plaintext CBC-Health-Analyzer-App/ ├── app.py # Main Flask application ├── cbcdata.csv # Sample CBC data ├── hrcbc_app.db # SQLite database ├── static/ # Static files (CSS, JS, images) ├── templates/ # HTML templates └── requirements.txt # Python dependencies ```</code></pre>
+```plaintext
+CBC-Health-Analyzer-App/
+├── app.py               # Main Flask application
+├── cbcdata.csv          # Sample CBC data
+├── hrcbc_app.db         # SQLite database
+├── static/              # Static files (CSS, JS, images)
+├── templates/           # HTML templates
+└── requirements.txt     # Python dependencies
+```
 
 ## License
 This project is licensed under the MIT License.
